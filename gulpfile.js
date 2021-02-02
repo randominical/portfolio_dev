@@ -21,8 +21,8 @@ let path = {
         js: project_folder + "/js/",
         //путь к img
         img: project_folder + "/img/",
-        //путь к fonts
-        fonts: project_folder + "/fonts/",
+        /*//путь к fonts
+        fonts: project_folder + "/fonts/",*/
     },
     //пути для папки с исходниками
     src:{
@@ -34,8 +34,8 @@ let path = {
         js: source_folder + "/js/script.js",
         //путь к img
         img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
-        //путь к fonts
-        fonts: source_folder + "/fonts/*.ttf",
+        /*//путь к fonts
+        fonts: source_folder + "/fonts/*.ttf",*/
     },
     //пути к файлам, изменения в которых нужно слушать постоянно
     watch:{
@@ -192,7 +192,7 @@ function images() {
         //обновление страницы
         .pipe(browsersync.stream())
 }
-
+/*
 //функция для конвертации шрифтов ttf в woff и woff2
 function fonts() {
     src(path.src.fonts)
@@ -234,7 +234,7 @@ function fontsStyle(params) {
         })
     }
 }
-    
+*/    
 function cb() { }
 
 //отслеживание изменений в файлах
@@ -251,11 +251,11 @@ function clean(params) {
 }
 
 //запуск работы плагина
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts), fontsStyle);
+let build = gulp.series(clean, gulp.parallel(js, css, html, images/*, fonts*/)/*, fontsStyle*/);
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
-exports.fontsStyle = fontsStyle;
-exports.fonts = fonts;
+/*exports.fontsStyle = fontsStyle;
+exports.fonts = fonts;*/
 exports.images = images;
 exports.js = js;
 exports.css = css;
