@@ -95,6 +95,9 @@ body {
         column-gap: 20px;
         background: rgba(255, 255, 255, 1);
         border: 1px solid rgba(105, 105, 105, .1);
+        &:last-child {
+            grid-template: 1fr / 1fr;
+        }
     }
 }
 .item-sites {
@@ -141,6 +144,20 @@ body {
         &:hover {
             color: white;
             background-color: red;
+        }
+    }
+    &__self {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 24px;
+        line-height: 130%;
+        padding: 15px;
+        text-align: center;
+        span {
+            font-size: 100px;
+            display: block;
         }
     }
 }
