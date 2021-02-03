@@ -38,12 +38,16 @@ body {
 }
 
 .section__title {
-    font-size: 34px;
-    margin: 0 0 40px 0;
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    @media (min-width: 731px) {
+        font-size: 34px;
+        margin: 0 0 40px 0;
+    }
 }
 //================================
 .header {
-    height: 65px;
+    height: 45px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -59,44 +63,97 @@ body {
         justify-content: space-between;
     }
     &__title {
-        flex: 0 0 auto;
+        flex: 0 1 auto;
         font-family: 'Roboto Mono', monospace;
-        font-size: 24px;
+        font-size: 12px;
+        line-height: 130%;
         color: rgb(58, 58, 58);
-        span {
-            font-size: 14px;
+        margin: 0 5px 0 0;
+        .nobr {
+            white-space: nowrap;
+        }
+        .name {
+            display: none;
         }
     }
     &__link {
-        flex: 0 0 55px;
-        border-radius: 50%;
-        position: relative;
-        overflow: hidden;
-        img {
-            max-width: 100%;
+        display: none;
+    }
+    @media (min-width: 531px) {
+        &__title {
+            font-size: 18px;
+            line-height: 100%;
+            .name {
+                display: block;
+                font-size: 12px;
+            }
+        }
+        &__link {
             display: block;
+            flex: 0 0 35px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            img {
+                max-width: 100%;
+                display: block;
+            }
+        }
+    }
+    @media (min-width: 731px) {
+        height: 65px;
+        &__title {
+            font-size: 24px;
+            .name {
+                font-size: 14px;
+            }
+        }
+        &__link {
+            flex: 0 0 55px;
         }
     }
 }
 //================================
 .sites {
     color: rgb(58, 58, 58);
-    padding: 95px 0 100px 0;
+    padding: 65px 0 60px 0;
     &__body {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 1fr;
-        column-gap: 50px;
-        row-gap: 50px;
+        display: block;
     }
     &__item {
         display: grid;
-        grid-template: 1fr / 26% 1fr;
-        column-gap: 20px;
+        grid-template: 1fr / 35% 1fr;
+        column-gap: 10px;
         background: rgba(255, 255, 255, 1);
         border: 1px solid rgba(105, 105, 105, .1);
+        margin: 0 0 20px 0;
         &:last-child {
             grid-template: 1fr / 1fr;
+        }
+    }
+    @media (min-width: 731px) {
+        padding: 95px 0 100px 0;
+        &__item {
+            column-gap: 20px;
+        }
+    }
+    @media (min-width: 951px) {
+        &__body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 1fr;
+            column-gap: 30px;
+            row-gap: 30px;
+        }
+        &__item {
+            grid-template: 1fr / 26% 1fr;
+            margin: 0;
+        }
+    }
+    @media (min-width: 1021px) {
+        &__body {
+            column-gap: 50px;
+            row-gap: 50px;
         }
     }
 }
@@ -107,35 +164,35 @@ body {
         img {
             width: 100%;
             position: absolute;
-            top: 0;
+            top: 50%;
             left: 50%;
-            transform: translate(-50%, 0);
+            transform: translate(-50%, -50%);
         }
     }
     &__description {
         padding: 10px 10px 20px 0;
         display: grid;
-        grid-template: minmax(26px, auto) 1fr 25px / 1fr;
         row-gap: 10px;
     }
     &__lable {
-        font-size: 20px;
+        font-size: 16px;
         line-height: 130%;
         margin: 0;
     }
     &__text {
-        font-size: 16px;
+        font-size: 12px;
         line-height: 130%;
         p {
-            margin: 0 0 8px 0;
+            margin: 0 0 4px 0;
         }
     }
     &__link {
-        width: 130px;
+        width: 120px;
+        height: 25px;
         display: grid;
         align-items: center;
         justify-items: center;
-        font-size: 13px;
+        font-size: 12px;
         color: red;
         text-transform: uppercase;
         border: 1px solid red;
@@ -151,13 +208,47 @@ body {
         align-items: center;
         justify-items: center;
         font-family: 'Roboto Mono', monospace;
-        font-size: 24px;
+        font-size: 18px;
         line-height: 130%;
         padding: 15px;
         text-align: center;
         span {
-            font-size: 100px;
+            font-size: 60px;
             display: block;
+            margin: 0 0 30px 0;
+        }
+    }
+    @media (min-width: 731px) {
+        &__image {
+            img {
+                top: 0;
+                transform: translate(-50%, 0);
+            }
+        }
+        &__description {
+            padding: 10px 10px 20px 0;
+            display: grid;
+            grid-template: minmax(26px, auto) 1fr 25px / 1fr;
+            row-gap: 10px;
+        }
+        &__lable {
+            font-size: 20px;
+        }
+        &__text {
+            font-size: 16px;
+            p {
+                margin: 0 0 8px 0;
+            }
+        }
+        &__link {
+            width: 130px;
+            font-size: 13px;
+        }
+        &__self {
+            font-size: 24px;
+            span {
+                font-size: 100px;
+            }
         }
     }
 }
@@ -174,11 +265,16 @@ body {
     }
     &__link {
         color: black;
-        font-size: 16px;
+        font-size: 14px;
         padding: 3px;
-        margin: 0 10px 0 0;
+        margin: 0 5px 0 5px;
         &:hover {
             color: red;
+        }
+    }
+    @media (min-width: 731px) {
+        &__link {
+            font-size: 16px;
         }
     }
 }
