@@ -655,11 +655,6 @@ body {
   border-radius: 5px;
 }
 
-.item-sites__link:hover {
-  color: white;
-  background-color: red;
-}
-
 .item-sites__self {
   display: -ms-grid;
   display: grid;
@@ -706,10 +701,6 @@ body {
   font-size: 14px;
   padding: 3px;
   margin: 0 5px 0 5px;
-}
-
-.footer__link:hover {
-  color: red;
 }
 
 @media (min-width: 531px) {
@@ -817,6 +808,24 @@ body {
 
   .footer__link {
     font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .item-sites__image:hover img {
+    -webkit-transition: width 4s linear;
+    -o-transition: width 4s linear;
+    transition: width 4s linear;
+    width: 110%;
+  }
+
+  .item-sites__link:hover {
+    color: white;
+    background-color: red;
+  }
+
+  .footer__link:hover {
+    color: red;
   }
 }
 

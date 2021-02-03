@@ -198,10 +198,6 @@ body {
         border: 1px solid red;
         background-color: white;
         border-radius: 5px;
-        &:hover {
-            color: white;
-            background-color: red;
-        }
     }
     &__self {
         display: grid;
@@ -251,6 +247,22 @@ body {
             }
         }
     }
+    @media (min-width: 768px) {
+        &__image {
+            &:hover {
+                img {
+                    transition: width 4s linear;
+                    width: 110%;
+                }
+            }
+        }
+        &__link {
+            &:hover {
+                color: white;
+                background-color: red;
+            }
+        }
+    }
 }
 //================================
 .footer {
@@ -268,13 +280,17 @@ body {
         font-size: 14px;
         padding: 3px;
         margin: 0 5px 0 5px;
-        &:hover {
-            color: red;
-        }
     }
     @media (min-width: 731px) {
         &__link {
             font-size: 16px;
+        }
+    }
+    @media (min-width: 768px) {
+        &__link {
+            &:hover {
+                color: red;
+            }
         }
     }
 }
