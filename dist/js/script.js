@@ -1,1 +1,0 @@
-/*.item-sites__image onclick*/
