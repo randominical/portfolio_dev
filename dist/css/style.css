@@ -813,10 +813,10 @@ body {
 
 @media (min-width: 768px) {
   .item-sites__image:hover img {
-    -webkit-transition: width 4s linear;
-    -o-transition: width 4s linear;
-    transition: width 4s linear;
-    width: 110%;
+    -webkit-transition: width 5s linear;
+    -o-transition: width 5s linear;
+    transition: width 5s linear;
+    width: 130%;
   }
 
   .item-sites__link:hover {
